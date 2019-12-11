@@ -39,10 +39,13 @@ CLion采用了Cmake的编译方式，运行项目后，会在项目目录下生�
 拿本仓库中摄影测量/相对定向[摄影测量/相对定向](https://gitee.com/xiaoke0o/UniversityCodeWork/tree/master/Photogrammetry)项目来说，打开我的项目是这样的
 
 ![relative_orientation](https://images.gitee.com/uploads/images/2019/1211/155027_c5e34b87_5199880.png "屏幕截图.png")
+
 我们运行一下提示cmake-build-debug不存在，当然也就无法运行
+
 ![cmake-build-debug no found](https://images.gitee.com/uploads/images/2019/1211/155157_c0ad4c0b_5199880.png "屏幕截图.png")
 
 我们单击菜单栏Tools->CMake->Reload CMake Project，CLion就会生成一份cmake-build-debug，然后就可以运行了。
+
 ![reload CMake Project](https://images.gitee.com/uploads/images/2019/1211/155345_e31696f2_5199880.png "屏幕截图.png")
 
 
