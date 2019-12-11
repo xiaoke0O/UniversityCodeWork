@@ -1,9 +1,9 @@
 # UniversityCodeWork
 
-#### 介绍
+## 介绍
 大学阶段的编程作业，一般为专业课作业。
 
-#### 内容组织
+## 内容组织
 通用内容
 
 >所有项目均在Linux系统下编写并运行通过，读者若在Windows系统下遇到运行问题，欢迎Issues
@@ -23,16 +23,31 @@ MATLB版本为2018
 
 每个项目所用到的其他库在其项目的Readme文件中查看。
 
-#### 使用说明
+## 使用说明
 
 当然，并不建议读者直复制，推荐能看懂，然后自己写。
 
 没有限制，可随意复制使用，主代码都在每一个文件夹中。、
 所有项目除特殊的大型程序分主函数和函数体外，其他的都只有一个main文件。可以下载下来为自己所用。
 
-CLion用户，可以直接打开CPP项目文件夹，运行。
+### Clion用户
 
-#### 参与贡献
+CLion是一款很不错的跨平台的C/CPP集成开发环境（IDE），本仓库中所用C/CPP均在CLion上开发。
+CLion采用了Cmake的编译方式，运行项目后，会在项目目录下生成一个`cmake-build-debug`文件夹，里面会放`CMakeCache.txt`等编译所需文件。
+我在这里上传的项目没有`cmake-build-debug`文件夹，所以用CLion打开后不能直接编译运行，需要重新加载一下CMake Project，具体方法如下：
+
+拿本仓库中摄影测量/相对定向[摄影测量/相对定向](https://gitee.com/xiaoke0o/UniversityCodeWork/tree/master/Photogrammetry)项目来说，打开我的项目是这样的
+
+![relative_orientation](https://images.gitee.com/uploads/images/2019/1211/155027_c5e34b87_5199880.png "屏幕截图.png")
+我们运行一下提示cmake-build-debug不存在，当然也就无法运行
+![cmake-build-debug no found](https://images.gitee.com/uploads/images/2019/1211/155157_c0ad4c0b_5199880.png "屏幕截图.png")
+
+我们单击菜单栏Tools->CMake->Reload CMake Project，CLion就会生成一份cmake-build-debug，然后就可以运行了。
+![reload CMake Project](https://images.gitee.com/uploads/images/2019/1211/155345_e31696f2_5199880.png "屏幕截图.png")
+
+
+
+## 参与贡献
 欢迎读者提交Issues，共同进步！！
 
 1.  Fork 本仓库
