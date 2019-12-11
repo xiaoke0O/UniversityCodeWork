@@ -3,35 +3,37 @@
 #### 介绍
 大学阶段的编程作业，一般为专业课作业。
 
-#### 软件架构
-软件架构说明
+#### 内容组织
+通用内容
 
+>所有项目均在Linux系统下编写并运行通过，读者若在Windows系统下遇到运行问题，欢迎Issues
 
-#### 安装教程
+涉及语言包括CPP、IDL、MATLB、Fortan
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+CPP项目采用cmake格式组织，依赖条件如下：
+- [x] cmake > 3.15
+- [x] CPP_STANDARD c++14
+
+Fortan项目在GFortran编译器下编写。
+
+IDL版本为8.3
+
+MATLB版本为2018
+
+每个项目所用到的其他库在其项目的Readme文件中查看。
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+当然，并不建议读者直复制，推荐能看懂，然后自己写。
+
+没有限制，可随意复制使用，主代码都在每一个文件夹中。、
+所有项目除特殊的大型程序分主函数和函数体外，其他的都只有一个main文件。可以下载下来为自己所用。
 
 #### 参与贡献
+欢迎读者提交Issues，共同进步！！
 
 1.  Fork 本仓库
 2.  新建 Feat_xxx 分支
 3.  提交代码
 4.  新建 Pull Request
 
-
-#### 码云特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
