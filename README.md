@@ -15,13 +15,13 @@ CPP项目采用cmake格式组织，依赖条件如下：
 - [x] CPP_STANDARD c++14
 
 
-Fortan项目在GFortran编译器下编写。
+Fortan项目在GFortran编译器下编写，语法为Fortran90以后。
 
 IDL版本为8.3
 
 MATLB版本为2018
 
-每个项目所用到的其他库在其项目的Readme文件中查看。
+每个项目所用到的其他库在其项目的README文件中查看。
 
 ## 使用说明
 
