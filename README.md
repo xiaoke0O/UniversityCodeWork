@@ -1,16 +1,21 @@
 # UniversityCodeWork
 
 ## 介绍
-大学阶段的编程作业，一般为专业课作业。
+
+这里边放的应该是大学其间学到的最珍贵的东西了。
+
+大学阶段的编程作业，一般为专业课作业。夹杂的还有一些自己瞎胡整的小项目（Qt Electron Arduino）。
+
+整这个仓库的目的一方面是交流程序（交作业），另一方面是为了4年毕业了，能回过头看一下，知道自己没白混。
 
 ## 内容组织
 通用内容
 
 >所有项目均在Linux系统下编写并运行通过，读者若在Windows系统下遇到运行问题，欢迎Issues
 
-涉及语言包括CPP、IDL、MATLB、Fortan
+涉及语言包括C/C++、IDL、MATLB、Fortan、JavaScript
 
-CPP项目采用cmake格式组织，依赖条件如下：
+C/C++项目采用cmake格式组织，依赖条件如下：
 - [x] cmake > 3.15
 - [x] CPP_STANDARD c++14
 
@@ -20,6 +25,8 @@ Fortan项目在GFortran编译器下编写，语法为Fortran90以后。
 IDL版本为8.3
 
 MATLB版本为2018
+
+Qt平台为Qt5
 
 每个项目所用到的其他库在其项目的README文件中查看。
 
