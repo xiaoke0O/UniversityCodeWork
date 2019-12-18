@@ -13,7 +13,7 @@
 
 >所有项目均在Linux系统下编写并运行通过，读者若在Windows系统下遇到运行问题，欢迎Issues
 
-涉及语言包括C/C++、IDL、MATLB、Fortan、JavaScript
+涉及语言包括C/C++、IDL、Python、Fortan、JavaScript
 
 C/C++项目采用cmake格式组织，依赖条件如下：
 - [x] cmake > 3.15
