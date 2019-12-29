@@ -128,7 +128,7 @@ int main() {
         Right_point.at<double >(1,1)=right_points[l][1];
         Right_point.at<double >(2,1)=-focal_length;
         right_space=right_rotate*Right_point;
-
+        //提出左右像空系坐标，简化N的计算公式
         double X1 = left_space[0][0];
         double Y1 = left_space[1][0];
         double Z1 = left_space[2][0];
@@ -136,10 +136,10 @@ int main() {
         double X2 = right_space.at<double>(0, 0);
         double Y2 = right_space.at<double>(1, 0);
         double Z2 = right_space.at<double>(2, 0);
-
+        //计算左右N
         Left_N=(Bx*Z2-Bz*X2)/(X1*Z2-X2*Z1);
         Right_N=(Bx*Z1-Bz*X1)/(X1*Z2-X2*Z1);
-
+        // 每个点的模型坐标
         model_coor[0][0]=Left_N*X1;
         model_coor[0][1]=0.5*(Left_N*Y1+Right_N*Y2+By);
         model_coor[0][2]=Left_N*Z1;
