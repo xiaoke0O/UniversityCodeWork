@@ -12,8 +12,8 @@ int main() {
     double left_points[6][2];
     double right_points[6][2];
     ifstream left_pf, right_pf;
-    left_pf.open("../points/left_points.txt");
-    right_pf.open("../points/right_points.txt");
+    left_pf.open("../left_points.txt");
+    right_pf.open("../right_points.txt");
     if (!left_pf.is_open() || !right_pf.is_open()) {
         cout << "Some files failed to open!" << endl;
         return 1;
