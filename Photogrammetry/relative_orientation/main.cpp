@@ -7,7 +7,7 @@ using namespace cv;
 
 int main() {
 /********************
-*     ¶ÁÈ¡µãÎÄ¼ş      *
+*     è¯»å–ç‚¹æ–‡ä»¶      *
 *********************/
     double left_points[6][2];
     double right_points[6][2];
@@ -31,7 +31,7 @@ int main() {
     //cout<<left_points<<endl;
     //cout<<right_points<<endl;
 /*****************
-*     ³õÊ¼Öµ      *
+*     åˆå§‹å€¼      *
 ******************/
     double focal_length = 24; //mm
 
@@ -39,13 +39,13 @@ int main() {
     double Bx, By = 0, Bz = 0;
     Bx = left_points[0][0] - right_points[0][0];
 /*****************
-*     ´óµü´ú      *
+*     å¤§è¿­ä»£      *
 ******************/
 
-    //¼ÆËãÏñµãÔÚÏñ¿ÕÏµµÄ×ø±ê
+    //è®¡ç®—åƒç‚¹åœ¨åƒç©ºç³»çš„åæ ‡
     double left_space[3][1];
     Mat right_space(3, 1, CV_64F, 0.0);
-    double Left_N = 0, Right_N;
+    double Left_N = 0, Right_N = 0;
 
     Mat A(6, 5, CV_64F, 0.0);
 
@@ -57,11 +57,11 @@ int main() {
 
     while (true) {
 
-        //ÓÒÆ¬µÄĞı×ª¾ØÕó
+        //å³ç‰‡çš„æ—‹è½¬çŸ©é˜µ
         Mat right_rotate = (Mat_<double>(3, 3) << 1, -kappa, -varphi, kappa, 1, -omega, varphi, omega, 1);
 
         /***************************** *
-       *Ğ¡Ñ­»·£¬¼ÆËãËùÓĞ¶¨Ïòµã£¬²¢¼ÆËãAºÍL *
+       *å°å¾ªç¯ï¼Œè®¡ç®—æ‰€æœ‰å®šå‘ç‚¹ï¼Œå¹¶è®¡ç®—Aå’ŒL *
        ****************************** */
         for (int i = 0; i < 6; i++) {
             left_space[0][0] = left_points[i][0];
@@ -100,9 +100,9 @@ int main() {
     }
 
 /******************************* *
- *         Êä³öµü´ú½á¹û           *
+ *         è¾“å‡ºè¿­ä»£ç»“æœ           *
  ****************************** */
-    cout << "µü´ú´ÎÊı£º" << count << endl;
+    cout << "è¿­ä»£æ¬¡æ•°ï¼š" << count << endl;
     cout << "By= " << By / Bx << endl;
     cout << "Bz= " << Bz / Bx << endl;
     cout << "varphi= " << varphi << endl;
@@ -111,28 +111,40 @@ int main() {
     cout << "Loop over!" << endl;
 
 /******************************* *
- *         ÇóÄ£ĞÍµã×ø±ê           *
+ *         æ±‚æ¨¡å‹ç‚¹åæ ‡           *
  ****************************** */
-    //Ä£ĞÍµãµÄx×ø±ê
-    Mat delta_X(6, 1, CV_64F, 0.0);
-    //Ä£ĞÍµãµÄy×ø±ê
-    Mat delta_Y(6, 1, CV_64F, 0.0);
-    //Ä£ĞÍµãµÄz×ø±ê
-    Mat delta_Z(6, 1, CV_64F, 0.0);
-    Mat Left_point(6, 3, CV_64F, 0.0);
-for(int i=0;i<6;++i){
-    for (int j = 0; j < 2; ++j) {
-        Left_point.at<double >(i,j) =left_points[i][j];
+    //æ¨¡å‹ç‚¹çš„åæ ‡
+    double model_coor[1][3];
+    
+    Mat right_rotate = (Mat_<double>(3, 3) << 1, -kappa, -varphi, kappa, 1, -omega, varphi, omega, 1);
+    Mat Right_point(3,1,CV_64F,0.0);
+
+    for (int l = 0; l < 6; ++l) {
+        left_space[0][0] = left_points[l][0];
+        left_space[1][0] = left_points[l][1];
+        left_space[2][0] = -focal_length;
+
+        Right_point.at<double >(0,0)=right_points[l][0];
+        Right_point.at<double >(1,1)=right_points[l][1];
+        Right_point.at<double >(2,1)=-focal_length;
+        right_space=right_rotate*Right_point;
+
+        double X1 = left_space[0][0];
+        double Y1 = left_space[1][0];
+        double Z1 = left_space[2][0];
+
+        double X2 = right_space.at<double>(0, 0);
+        double Y2 = right_space.at<double>(1, 0);
+        double Z2 = right_space.at<double>(2, 0);
+
+        Left_N=(Bx*Z2-Bz*X2)/(X1*Z2-X2*Z1);
+        Right_N=(Bx*Z1-Bz*X1)/(X1*Z2-X2*Z1);
+
+        model_coor[0][0]=Left_N*X1;
+        model_coor[0][1]=0.5*(Left_N*Y1+Right_N*Y2+By);
+        model_coor[0][2]=Left_N*Z1;
+        printf("ç¬¬%dä¸ªç‚¹çš„æ¨¡å‹åæ ‡ä¸º(%f,%f,%f)\n",l+1,model_coor[0][0],model_coor[0][1],model_coor[0][2]);
     }
-    Left_point.at<double >(i,2)=-focal_length;
-}
-
-delta_X=Left_N*Left_point.colRange(0,1);
-
-
-cout<<delta_X;
-    //    delta_X=left_space.Col
-
 
     return 0;
 }
