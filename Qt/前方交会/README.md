@@ -1,5 +1,41 @@
 ### 前方交会小程序
 
+摄影测量课程设计进行到了第二步——前方交会求待定点坐标，既下图中的白色点的坐标。
 
+<img src="https://gitee.com/xiaoke0o/UniversityCodeWork/master/Qt/%E5%89%8D%E6%96%B9%E4%BA%A4%E4%BC%9A/article_image/image-20200220113621543.png" alt="image-20200220113621543" style="zoom: 67%;" />
+
+#### 理论基础——前方交会
+
+##### 前方交会流程
+
+​	(1). 由外方位角元素分别计算左右像的旋转矩阵
+
+​	(2). 由旋转矩阵和(1)分别计算待测点在左右像的像辅系坐标
+
+​	(3). 由外方位线元素和(2)分别计算左右像的点投影系数
+
+​	(4). 由(3)和(2)计算地面点在左像像辅系坐标
+
+​	(5). 由外方位线元素和(4)计算地面点的地面坐标
+
+#### 实现方法
+
+> 程序语言：C++
+>
+> 矩阵运算库：Eigen3
+>
+> GUI开发框架：Qt 5
+
+1. 录入六张像片的外方位角元素和线元素
+2. 根据同名像点所在像片选择左右片的组合方式
+3. 录入同名像点在左右片的像点坐标
+4. 根据2中选择的像片组合调取已经录入的外方位元素参与计算
+5. 输出结果
+
+![输入图片说明](https://gitee.com/xiaoke0o/UniversityCodeWork/master/Qt/%E5%89%8D%E6%96%B9%E4%BA%A4%E4%BC%9A/article_image/image-20200220153737533.png "在这里输入图片标题")
+
+#### 程序截图
+
+<figure class="half">     <img src="https://gitee.com/xiaoke0o/UniversityCodeWork/blob/master/Qt/%E5%89%8D%E6%96%B9%E4%BA%A4%E4%BC%9A/article_image/image-20200220154250416.png">  <img  sec=https://gitee.com/xiaoke0o/UniversityCodeWork/blob/master/Qt/%E5%89%8D%E6%96%B9%E4%BA%A4%E4%BC%9A/article_image/image-20200220153737533.png "在这里输入图片标题")"> </figure>
 
 2020年2月19日
