@@ -2,7 +2,7 @@
 
 摄影测量课程设计进行到了第二步——前方交会求待定点坐标，既下图中的白色点的坐标。
 
-<img src="https://gitee.com/xiaoke0o/UniversityCodeWork/master/Qt/%E5%89%8D%E6%96%B9%E4%BA%A4%E4%BC%9A/article_image/image-20200220113621543.png" alt="image-20200220113621543" style="zoom: 67%;" />
+<img src="https://gitee.com/xiaoke0o/UniversityCodeWork/raw/master/Qt/%E5%89%8D%E6%96%B9%E4%BA%A4%E4%BC%9A/article_image/image-20200220113621543.png" alt="image-20200220113621543" style="zoom: 67%;" />
 
 #### 理论基础——前方交会
 
@@ -32,10 +32,9 @@
 4. 根据2中选择的像片组合调取已经录入的外方位元素参与计算
 5. 输出结果
 
-![输入图片说明](https://gitee.com/xiaoke0o/UniversityCodeWork/master/Qt/%E5%89%8D%E6%96%B9%E4%BA%A4%E4%BC%9A/article_image/image-20200220153737533.png "在这里输入图片标题")
 
 #### 程序截图
 
-<figure class="half">     <img src="https://gitee.com/xiaoke0o/UniversityCodeWork/blob/master/Qt/%E5%89%8D%E6%96%B9%E4%BA%A4%E4%BC%9A/article_image/image-20200220154250416.png">  <img  sec=https://gitee.com/xiaoke0o/UniversityCodeWork/blob/master/Qt/%E5%89%8D%E6%96%B9%E4%BA%A4%E4%BC%9A/article_image/image-20200220153737533.png "在这里输入图片标题")"> </figure>
+<figure class="half">     <img src="https://gitee.com/xiaoke0o/UniversityCodeWork/raw/master/Qt/%E5%89%8D%E6%96%B9%E4%BA%A4%E4%BC%9A/article_image/image-20200220154250416.png">  <img  src=https://gitee.com/xiaoke0o/UniversityCodeWork/raw/master/Qt/%E5%89%8D%E6%96%B9%E4%BA%A4%E4%BC%9A/article_image/image-20200220153737533.png"> </figure>
 
 2020年2月19日
