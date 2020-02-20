@@ -2,7 +2,7 @@
 
 摄影测量课程设计进行到了第二步——前方交会求待定点坐标，既下图中的白色点的坐标。
 
-<img src="https://gitee.com/xiaoke0o/UniversityCodeWork/raw/master/Qt/%E5%89%8D%E6%96%B9%E4%BA%A4%E4%BC%9A/article_image/image-20200220113621543.png" alt="image-20200220113621543" style="zoom: 67%;" />
+<img src="https://images.gitee.com/uploads/images/2020/0220/201512_869bc369_5199880.png" alt="image-20200220113621543" style="zoom: 67%;" />
 
 #### 理论基础——前方交会
 
@@ -35,6 +35,6 @@
 
 #### 程序截图
 
-<figure class="half">     <img src="https://gitee.com/xiaoke0o/UniversityCodeWork/raw/master/Qt/%E5%89%8D%E6%96%B9%E4%BA%A4%E4%BC%9A/article_image/image-20200220154250416.png">  <img  src="https://gitee.com/xiaoke0o/UniversityCodeWork/raw/master/Qt/%E5%89%8D%E6%96%B9%E4%BA%A4%E4%BC%9A/article_image/image-20200220153737533.png"> </figure>
+<figure class="half">     <img src="https://images.gitee.com/uploads/images/2020/0220/201514_96ddce7c_5199880.png">  <img  src="https://images.gitee.com/uploads/images/2020/0220/201529_10f9acdb_5199880.png"> </figure>
 
 2020年2月19日
