@@ -8,11 +8,11 @@ int main() {
     startime = clock();
     Design project;
     project.setControlNumber(6);
-    project.setInputPath("../files/42.csv");
+    project.setInputPath("../files/totalpoints.csv");
     project.setOutPath("../files/output.xlsx");
-    cout << "ÏñÆ¬Êý£º" << project.number_photo << endl;
-    cout << "ËùÓÐµã£º" << project.AllMarkPointsNumber << endl;
-    cout << "ËùÓÐÍ¼ÉÏµã£º" << project.AllPhotoPointsNumber << endl;
+    cout << "åƒç‰‡æ•°ï¼š" << project.number_photo << endl;
+    cout << "æ‰€æœ‰ç‚¹ï¼š" << project.AllMarkPointsNumber << endl;
+    cout << "æ‰€æœ‰å›¾ä¸Šç‚¹ï¼š" << project.AllPhotoPointsNumber << endl;
     endtime = clock();
     double totaltime = (double) (endtime - startime) / CLOCKS_PER_SEC;
     cout << "Total Time:" << totaltime * 1000 << " ms" << endl;
