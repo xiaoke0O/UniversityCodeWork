@@ -46,7 +46,7 @@ void Design::setInputPath(const string &path) {
  * 再输出Finall矩阵到文件
  */
 void Design::setOutPath(const string &path) {
-    IOFormat xlsx(3, 0, "\t", "\n");
+    IOFormat xlsx(5, 0, "\t", "\n");
     ofstream outfile;
     outfile.open(path);
     setMatrix();
