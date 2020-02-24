@@ -25,12 +25,10 @@
 这是光束法区域网平差的步骤，本程序要做的是第2步，逐点列出误差方程，即得到这个误差方程组的系数。
 
 **误差方程组 长这样**
-$$
-\left\{\begin{array}{}
-V_x=a_{11}\Delta X_s+a_{12}\Delta Y_s+a_{13}\Delta Z_s+a_{14}\Delta\varphi+a_{15}\Delta\omega+a_{16}\Delta\kappa-a_{11}\Delta X-a_{12}\Delta Y-a_{13}\Delta Z-l_x\\
-V_y=a_{21}\Delta X_s+a_{22}\Delta Y_s+a_{23}\Delta Z_s+a_{24}\Delta\varphi+a_{25}\Delta\omega+a_{26}\Delta\kappa-a_{21}\Delta X-a_{22}\Delta Y-a_{23}\Delta Z-l_y
-\end{array}\right.
-$$
+
+![误差方程组](https://images.gitee.com/uploads/images/2020/0224/221957_d2bce845_5199880.png "屏幕截图.png")
+
+
 我们已经知道一共有42的像点
 
 每个像点可以列一个这样的方程组，所以可以列84行。
