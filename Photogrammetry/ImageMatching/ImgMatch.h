@@ -10,13 +10,31 @@
 class ImgMatch {
 public:
     ImgMatch();//构造函数
-    void getImage(cv::Mat Image) { originImage = Image; };
+    void getImage(cv::Mat& Image) {
+            originImage = &Image;
+            leftup.x = 0;
+            leftup.y = 0;
+            rightdown.x=originImage->cols-1;
+            rightdown.y=originImage->rows-1;
+    }
 
-    void getTemplateImage(cv::Mat Image) { templateImage = Image; };
+    void getTemplateImage(cv::Mat& Image) { templateImage = &Image; }
+
+    void getCornerPoint(int leftupX, int leftupY, int rightdownX, int rightdownY)
+    {        leftup.x = leftupX;
+            leftup.y = leftupY;
+            rightdown.x=rightdownX;
+            rightdown.y=rightdownY;}
     void MatchingImage();
+
 private:
-    cv::Mat originImage;
-    cv::Mat templateImage;
+    cv::Mat *originImage{};
+    cv::Mat *templateImage{};
+    cv::Mat *resultImage{};
+    cv::Point2i leftup{};
+    cv::Point2i rightdown{};
+    static void ShowImage(cv::Mat &Imag ,cv::Point2i lu,cv::Point2i rd,const cv::Scalar& color);
+    float getCorrelation(cv::Mat & targetImage,cv::Mat &searchImage);
 
 
 };
