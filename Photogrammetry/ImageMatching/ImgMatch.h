@@ -19,7 +19,7 @@ public:
     }
 
     void getTemplateImage(cv::Mat& Image) { templateImage = &Image; }
-
+    //获取区域角点坐标
     void getCornerPoint(int leftupX, int leftupY, int rightdownX, int rightdownY)
     {        leftup.x = leftupX;
             leftup.y = leftupY;
@@ -28,13 +28,15 @@ public:
     void MatchingImage();
 
 private:
+    std::vector<float> *CCORR;
     cv::Mat *originImage{};
     cv::Mat *templateImage{};
     cv::Mat *resultImage{};
     cv::Point2i leftup{};
     cv::Point2i rightdown{};
-    static void ShowImage(cv::Mat &Imag ,cv::Point2i lu,cv::Point2i rd,const cv::Scalar& color);
-    float getCorrelation(cv::Mat & targetImage,cv::Mat &searchImage);
+    static void ShowImage(cv::Mat Imag ,cv::Point2i lu,cv::Point2i rd,const cv::Scalar& color);
+    static float getCorrelation(cv::Mat & targetImage,cv::Mat &searchImage);
+    void MarkResult();
 
 
 };
