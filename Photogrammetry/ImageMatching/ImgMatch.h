@@ -10,32 +10,38 @@
 class ImgMatch {
 public:
     ImgMatch();//构造函数
-    void getImage(cv::Mat& Image) {
+    //公有函数为私有成员赋值，并初始化搜索区域位置
+    void getImage(cv::Mat &Image) {
             originImage = &Image;
             leftup.x = 0;
             leftup.y = 0;
-            rightdown.x=originImage->cols-1;
-            rightdown.y=originImage->rows-1;
+            Swidth=Image.cols;
+            Sheight=Image.rows;
     }
+    void getTemplateImage(cv::Mat &Image) { templateImage = &Image; }
 
-    void getTemplateImage(cv::Mat& Image) { templateImage = &Image; }
     //获取区域角点坐标
-    void getCornerPoint(int leftupX, int leftupY, int rightdownX, int rightdownY)
-    {        leftup.x = leftupX;
+    void getCornerPoint(int leftupX, int leftupY, int searchwidth, int searchheight) {
+            leftup.x = leftupX;
             leftup.y = leftupY;
-            rightdown.x=rightdownX;
-            rightdown.y=rightdownY;}
-    void MatchingImage();
+            Swidth = searchwidth;
+            Sheight = searchheight;
+    }
+    //公有函数，进行匹配的开关
+    void MatchingImage(bool Animation);
 
 private:
-    std::vector<float> *CCORR;
-    cv::Mat *originImage{};
-    cv::Mat *templateImage{};
-    cv::Mat *resultImage{};
-    cv::Point2i leftup{};
-    cv::Point2i rightdown{};
-    static void ShowImage(cv::Mat Imag ,cv::Point2i lu,cv::Point2i rd,const cv::Scalar& color);
-    static float getCorrelation(cv::Mat & targetImage,cv::Mat &searchImage);
+
+    std::vector<float> CCORR;//存储的每一次计算的结果
+    cv::Mat *originImage{};//待匹配的大图
+    cv::Mat *templateImage{};//模板图像
+    cv::Point2i leftup;//搜索区域左上角坐标
+    int Swidth, Sheight;//搜索区域的长宽
+    //显示图像，集画矩形与imshow
+    static void ShowImage(cv::Mat Imag, cv::Rect2i rect, const cv::Scalar &color);
+    //计算相关系数
+    float getCorrelation(cv::Mat &targetImage, cv::Mat &searchImage);
+    //找出相关系数最大的地方并画出结果
     void MarkResult();
 
 
