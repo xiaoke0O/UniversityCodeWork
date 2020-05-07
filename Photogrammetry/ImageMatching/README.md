@@ -24,8 +24,9 @@ h[确定出最大值搜索窗口的左上角值]
 i[标记出最大值窗口]
 g-->h
 h-->i
-```
 
+```
+![](https://pic.downk.cc/item/5eb42828c2a9a83be59b688f.png)
 #### 依赖项
 
 - [x] Opencv >=3.0
